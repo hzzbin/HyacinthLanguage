@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: dataline-boot
+  mvc:
+    favicon:
+      enable: false;
+
+server:
+  port: 8088
+  tomcat:
+    max-threads: 400
+    uri-encoding: UTF-8
+
+
+mybatis:
+  configuration:
+    aggressiveLazyLoading: false
+    lazyLoadingEnabled: true
+    lazyLoadTriggerMethods: ""
+    mapUnderscoreToCamelCase: true
+
+logging:
+  path: "../hyacinth-logs/prod"
+  level:
+    root: info
+    org.springframework.web: debug
+
+jdbc:
+  jdbcUrl: jdbc:mysql://localhost:3306/hyacinth?useUnicode=true&characterEncoding=utf8
+  username:
+  password:
