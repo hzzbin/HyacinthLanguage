@@ -18,11 +18,8 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class RetrofitConfig {
 
-    @Value("${baidu.baseUrl}")
+    @Value("${baseUrl.baiduBaseUrl}")
     private String baiduBaseUrl;
-
-
-
 
     private static Retrofit buildRetrofit(String baseUrl, OkHttpClient client) {
         return new Retrofit.Builder()
@@ -42,7 +39,7 @@ public class RetrofitConfig {
     }
 
     @Bean
-    public BaiduIPLocationClient gitHubService() {
+    public BaiduIPLocationClient getBaiduIPLocationClient() {
         final Logger logger = LoggerFactory.getLogger(BaiduIPLocationClient.class);
         final OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)
